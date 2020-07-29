@@ -6,7 +6,6 @@ const styles = {
     width: '200px',
     margin: '20px auto'
 }
-
 const Game = () => {
     const [board, setBoard] = useState(Array(9).fill({ value: '', winner: false }));
     const [xIsNext, setXisNext] = useState(true);

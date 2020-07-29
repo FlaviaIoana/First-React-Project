@@ -12,10 +12,12 @@ const style = {
     marginTop: '50px'
 }
 
-const Board = ({ squares, onClick }) => (
+const Board = ({ squares, onClick, val }) => (
     <div style={style}>
         {squares.map((square, i) => (
-            <Square key={i} value={square.value} onClick={() => onClick(i)} winner={square.winner} />
+            // <div>{console.log(val[i])}
+            <Square key={i} value={square} onClick={() => onClick(i)} isGood={val[i]}/>
+            // </div>
         ))}
         {/* <Square value="1" onClick={() => onClick("dummy value")} /> */}
     </div>

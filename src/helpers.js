@@ -14,12 +14,20 @@ export function calculateWinner(squares) {
   ];
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
-    if (squares[a].value && squares[a].value === squares[b].value && squares[a].value === squares[c].value) {
-      // console.log(squares[b].value);
+    let activities=[[0,false], [1,false], [2,false],[3,false],[4,false],[5,false],[6,false],[7,false],[8,false]];
+    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+      // console.log(a);
+      // console.log(b);
+      // console.log(c);
       // console.log(lines[i]);
+      for (let j = 0; j < activities.length; j++){
+      if (a==activities[j][0] || b==activities[j][0] || c==activities[j][0]) { activities[j][1]= true};
+      // console.log(activities[j][1]);
+      }
       // squares[a].style.color="yellow";
       // lines[i].style={style};
-      return squares[a].value;
+      // return squares[a];
+      return activities;
     }
   }
   return false;
